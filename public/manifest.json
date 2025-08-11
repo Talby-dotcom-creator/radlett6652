@@ -30,16 +30,17 @@
   "scope": "/",
   "screenshots": [
     {
-      "src": "/LODGE PIC.png",
+      "src": "/screenshot-wide.png",
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide"
     },
     {
-      "src": "/radlett Masonic Pillars.webp",
-      "sizes": "750x1334",
-      "type": "image/webp",
+      "src": "/screenshot-narrow.png",
+      "sizes": "750x1125",
+      "type": "image/png",
       "form_factor": "narrow"
     }
   ]
 }
+
