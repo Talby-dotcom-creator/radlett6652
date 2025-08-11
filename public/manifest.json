@@ -1,5 +1,5 @@
 {
-  "name": "Radlett Lodge No. 6652", 
+  "name": "Radlett Lodge No. 6652",
   "short_name": "Radlett Lodge",
   "description": "Official website of Radlett Lodge No. 6652 - Freemasons",
   "start_url": "/",
@@ -30,15 +30,15 @@
   "scope": "/",
   "screenshots": [
     {
-      "src": "/screenshot-wide.png",
+      "src": "/LODGE PIC.png",
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide"
     },
     {
-      "src": "/screenshot-narrow.png",
+      "src": "/radlett Masonic Pillars.webp",
       "sizes": "750x1334",
-      "type": "image/png",
+      "type": "image/webp",
       "form_factor": "narrow"
     }
   ]
