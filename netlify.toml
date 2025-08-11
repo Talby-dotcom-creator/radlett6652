@@ -1,6 +1,6 @@
 [build]
-  base    = "project"                 # <-- tell Netlify your app lives here
-  publish = "dist"                    # publish project/dist
+  # base not needed because the repo root IS the app
+  publish = "dist"
   command = "npm ci && npm run build"
 
 [build.environment]
@@ -10,6 +10,7 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
 
 [context.production]
   command = "npm run build"
