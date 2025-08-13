@@ -133,7 +133,7 @@ const HomePage: React.FC = () => {
       <section 
         className="relative min-h-screen flex flex-col justify-between text-white overflow-hidden"
         style={{
-          backgroundImage: `url('/masonic pillars (2).png')`,
+          backgroundImage: `url('/hero.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'bottom center',
         }}
