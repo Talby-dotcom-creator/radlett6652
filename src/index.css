@@ -146,4 +146,25 @@
   .react-calendar__tile:enabled:focus {
     background-color: #f8f8f8;
   }
+
+  /* ---- Hero helpers (background + responsive height) ---- */
+  .bg-hero-pillars {
+    background-image: url("/masonic-pillars.png?v=6");
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+
+  .hero-h {
+    height: 70vh; /* default */
+  }
+  @media (min-width: 768px) {   /* md */
+    .hero-h { height: 75vh; }
+  }
+  @media (min-width: 1280px) {  /* xl */
+    .hero-h { height: 62vh; }
+  }
+  @media (min-width: 1536px) {  /* 2xl */
+    .hero-h { height: 56vh; }
+  }
 }

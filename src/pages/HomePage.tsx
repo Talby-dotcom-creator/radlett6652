@@ -130,85 +130,88 @@ const HomePage: React.FC = () => {
       />
       
       {/* Hero Section with Centered Logo */}
-      <section 
-        className="relative min-h-screen flex items-center justify-center text-white overflow-hidden"
-        style={{
-          backgroundImage: `url('/masonic pillars (2).png')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'bottom center',
+<section className="relative flex items-center justify-center text-white overflow-hidden bg-hero-pillars hero-h">
+  {/* Dark overlay for better text readability */}
+  <div className="absolute inset-0 bg-primary-900 opacity-30"></div>
+
+  {/* Content */}
+  <div className="container mx-auto px-4 relative z-10 text-center max-w-5xl">
+    {/* Lodge Logo - Positioned Above Title */}
+    <div className="mb-2 mt-24 animate-fadeIn" style={{ animationDelay: "0.3s" }}>
+      <img
+        src="/lodge-logo.png"
+        alt="Radlett Lodge No. 6652 Logo"
+        className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 mx-auto object-contain drop-shadow-2xl"
+        onError={(e) => {
+          e.currentTarget.style.display = "none";
+          const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+          if (fallback) fallback.style.display = "flex";
         }}
-      >
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-primary-900 opacity-30"></div>
-        
-        {/* Content */}
-        <div className="container mx-auto px-4 relative z-10 text-center max-w-5xl">
-          {/* Lodge Logo - Positioned Above Title */}
-          <div className="mb-2 mt-24 animate-fadeIn" style={{ animationDelay: '0.3s' }}>
-            <img
-              src="/LODGE PIC copy copy.png"
-              alt="Radlett Lodge No. 6652 Logo"
-              className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 mx-auto object-contain drop-shadow-2xl"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-                // Show fallback icon
-                const fallback = e.currentTarget.nextElementSibling as HTMLElement;
-                if (fallback) fallback.style.display = 'flex';
-              }}
-            />
-            {/* Fallback icon */}
-            <div className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 mx-auto bg-secondary-500 rounded-full items-center justify-center hidden drop-shadow-2xl">
-              <Building2 className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-48 xl:h-48 text-primary-600" />
-            </div>
-          </div>
+      />
+      {/* Fallback icon */}
+      <div className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 mx-auto bg-secondary-500 rounded-full items-center justify-center hidden drop-shadow-2xl">
+        <Building2 className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-48 xl:h-48 text-primary-600" />
+      </div>
+    </div>
 
-          {/* Title and Subtitle */}
-          <div className="animate-fadeIn mt-4" style={{ animationDelay: '0.5s' }}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold mb-6 leading-tight text-secondary-500 text-chiselled">
-              Radlett Lodge No. 6652
-            </h1>
-            <p className="text-xl md:text-2xl lg:text-3xl mb-8 text-white max-w-4xl mx-auto leading-relaxed">
-              Integrity, Friendship, Respect and Service 
-            </p>
-            <p className="text-lg md:text-xl mb-10 text-secondary-100 max-w-3xl mx-auto">
-              A Masonic Lodge Under the jurisdiction of United Grand Lodge of England
-            </p>
-          </div>
+    {/* Title and Subtitle */}
+    <div className="animate-fadeIn mt-4" style={{ animationDelay: "0.5s" }}>
+      <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold mb-6 leading-tight text-secondary-500 text-chiselled">
+        Radlett Lodge No. 6652
+      </h1>
+      <p className="text-xl md:text-2xl lg:text-3xl mb-8 text-white max-w-4xl mx-auto leading-relaxed">
+        Integrity, Friendship, Respect and Service
+      </p>
+      <p className="text-lg md:text-xl mb-10 text-secondary-100 max-w-3xl mx-auto">
+        A Masonic Lodge under the jurisdiction of United Grand Lodge of England
+      </p>
+    </div>
 
-          {/* Call to Action Buttons - Moved Below Subtitle */}
-          <div className="animate-fadeIn flex flex-col sm:flex-row justify-center gap-4 mb-10" style={{ animationDelay: '0.6s' }}>
-            <Link to="/about">
-              <Button variant="primary" size="lg" className="min-w-[200px]">
-                Learn About Us
-              </Button>
-            </Link>
-            <Link to="/join">
-              <Button variant="outline" size="lg" className="min-w-[200px] border-white text-white hover:bg-white hover:text-primary-600">
-                Join Our Lodge
-              </Button>
-            </Link>
-          </div>
+    {/* Call to Action Buttons */}
+    <div
+      className="animate-fadeIn flex flex-col sm:flex-row justify-center gap-4 mb-10"
+      style={{ animationDelay: "0.6s" }}
+    >
+      <Link to="/about">
+        <Button variant="primary" size="lg" className="min-w-[200px]">
+          Learn About Us
+        </Button>
+      </Link>
+      <Link to="/join">
+        <Button
+          variant="outline"
+          size="lg"
+          className="min-w-[200px] border-white text-white hover:bg-white hover:text-primary-600"
+        >
+          Join Our Lodge
+        </Button>
+      </Link>
+    </div>
 
-          {/* Key Information - Centered 2-column layout */}
-          <div className="animate-fadeIn grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto mt-48" style={{ animationDelay: '0.7s' }}>
-            <div className="bg-primary-900 bg-opacity-15 backdrop-blur-sm rounded-lg p-6 border border-secondary-500 border-opacity-30 transform transition-all duration-300 hover:scale-105">
-              <div className="text-secondary-400 mb-2">
-                <Calendar className="w-8 h-8 mx-auto" />
-              </div>
-              <h3 className="font-heading font-semibold text-lg mb-2">Founded</h3>
-              <p className="text-neutral-200">1948</p>
-            </div>
-            
-            <div className="bg-primary-900 bg-opacity-15 backdrop-blur-sm rounded-lg p-6 border border-secondary-500 border-opacity-30 transform transition-all duration-300 hover:scale-105">
-              <div className="text-secondary-400 mb-2">
-                <Users className="w-8 h-8 mx-auto" />
-              </div>
-              <h3 className="font-heading font-semibold text-lg mb-2">Active Members</h3>
-              <p className="text-neutral-200">28+</p>
-            </div>
-          </div>
+    {/* Key Information */}
+    <div
+      className="animate-fadeIn grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto mt-48"
+      style={{ animationDelay: "0.7s" }}
+    >
+      <div className="bg-primary-900 bg-opacity-15 backdrop-blur-sm rounded-lg p-6 border border-secondary-500 border-opacity-30 transform transition-all duration-300 hover:scale-105">
+        <div className="text-secondary-400 mb-2">
+          <Calendar className="w-8 h-8 mx-auto" />
         </div>
-      </section>
+        <h3 className="font-heading font-semibold text-lg mb-2">Founded</h3>
+        <p className="text-neutral-200">1948</p>
+      </div>
+
+      <div className="bg-primary-900 bg-opacity-15 backdrop-blur-sm rounded-lg p-6 border border-secondary-500 border-opacity-30 transform transition-all duration-300 hover:scale-105">
+        <div className="text-secondary-400 mb-2">
+          <Users className="w-8 h-8 mx-auto" />
+        </div>
+        <h3 className="font-heading font-semibold text-lg mb-2">Active Members</h3>
+        <p className="text-neutral-200">28+</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Welcome Section */}
       <section className="py-20 bg-white">
