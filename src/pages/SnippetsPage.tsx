@@ -21,7 +21,6 @@ const SnippetsPage: React.FC = () => {
 
         const snippetsData = await api.getSnippets();
 
-        // Filter: only published and already released (publish_date <= now)
         const now = new Date();
         const publishedSnippets = (snippetsData || [])
           .filter(
@@ -51,15 +50,13 @@ const SnippetsPage: React.FC = () => {
 
   return (
     <>
-      {/* ✅ SEO */}
       <SEOHead
         title="Weekly Thoughts | Radlett Lodge No. 6652"
         description="Weekly Thoughts from Radlett Lodge — short reflections designed to inspire, provoke thought, and enrich your Masonic journey."
         keywords="Freemasonry, Radlett Lodge, Weekly Thoughts, Masonic reflections, Hertfordshire Freemasons"
       />
 
-      {/* ✅ Hero Section with textured background + Lodge logo */}
-      <section className="bg-textured py-16 relative">
+      <section className="bg-stone-dark py-16 relative">
         <div className="absolute inset-0 bg-white bg-opacity-80"></div>
         <div className="container mx-auto px-4 max-w-3xl text-center relative z-10">
           <img
@@ -80,7 +77,6 @@ const SnippetsPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ✅ Snippets List */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <SectionHeading
@@ -139,9 +135,9 @@ const SnippetsPage: React.FC = () => {
                           Array.isArray(snippet.tags) &&
                           snippet.tags.length > 0 && (
                             <div className="mt-4 flex flex-wrap gap-2">
-                              {snippet.tags.map((tag, tagIndex) => (
+                              {snippet.tags.map((tag, i) => (
                                 <span
-                                  key={tagIndex}
+                                  key={i}
                                   className="text-xs bg-primary-100 text-primary-600 px-3 py-1 rounded-full"
                                 >
                                   {tag}
@@ -187,7 +183,6 @@ const SnippetsPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ✅ CTA Section */}
       <section className="py-16 bg-primary-600 text-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
@@ -229,3 +224,4 @@ const SnippetsPage: React.FC = () => {
   );
 };
 
+export default SnippetsPage;
