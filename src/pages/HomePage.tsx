@@ -326,50 +326,53 @@ const HomePage: React.FC = () => {
       <CountdownTimer useSchedule={true} />
 
       {latestSnippet && (
-        <section className="py-16 bg-gradient-to-r from-primary-50 to-secondary-50">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-secondary-500 rounded-full mb-4">
-                  <Lightbulb className="w-8 h-8 text-primary-800" />
-                </div>
-                <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary-600 mb-2">
-                  Weekly Snippet
-                </h2>
-                <p className="text-neutral-600">
-                  Thought-provoking insights for your Masonic journey
-                </p>
-              </div>
+  <section className="py-16 bg-gradient-to-r from-primary-50 to-secondary-50">
+    <div className="container mx-auto px-4 md:px-6">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-8">
+          {/* Lodge logo instead of generic icon */}
+          <img
+            src="/lodge-logo.png"
+            alt="Radlett Lodge Logo"
+            className="w-16 h-16 mx-auto mb-4 object-contain drop-shadow-md"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+          <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary-600 mb-2">
+            Weekly Thought
+          </h2>
+          <p className="text-neutral-600">
+            A short reflection from Radlett Lodge
+          </p>
+        </div>
 
-              <div className="bg-white rounded-xl p-8 shadow-medium border border-neutral-100">
-                <h3 className="text-xl font-heading font-semibold text-primary-600 mb-4">
-                  {latestSnippet.title}
-                </h3>
-                <div
-                  className="prose prose-lg max-w-none text-neutral-700 mb-6"
-                  dangerouslySetInnerHTML={{ __html: latestSnippet.content }}
-                />
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center text-sm text-neutral-500">
-                    <Clock size={16} className="mr-2" />
-                    <span>
-                      {new Date(
-                        latestSnippet.publish_date
-                      ).toLocaleDateString('en-GB')}
-                    </span>
-                  </div>
-                  <Link to="/snippets">
-                    <Button variant="outline" size="sm" className="flex items-center">
-                      Read More Snippets
-                      <ArrowRight size={16} className="ml-2" />
-                    </Button>
-                  </Link>
-                </div>
-              </div>
+
+        <div className="bg-white rounded-xl p-8 shadow-medium border border-neutral-100">
+          <h3 className="text-xl font-heading font-semibold text-primary-600 mb-4">
+            {latestSnippet.title}
+          </h3>
+          <div
+            className="prose prose-lg max-w-none text-neutral-700 mb-6"
+            dangerouslySetInnerHTML={{ __html: latestSnippet.content }}
+          />
+          <div className="flex items-center justify-between">
+            <div className="flex items-center text-sm text-neutral-500">
+              <Clock size={16} className="mr-2" />
+              <span>{new Date(latestSnippet.publish_date).toLocaleDateString('en-GB')}</span>
             </div>
+            <Link to="/snippets">
+              <Button variant="outline" size="sm" className="flex items-center">
+                Read Weekly Thoughts
+                <ArrowRight size={16} className="ml-2" />
+              </Button>
+            </Link>
           </div>
-        </section>
-      )}
+        </div>
+      </div>
+    </div>
+  </section>
+)}
 
       {!dataLoading && events.length > 0 && (
         <section className="py-20 bg-white">

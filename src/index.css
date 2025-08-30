@@ -55,6 +55,7 @@
 }
 
 @layer utilities {
+  /* Fade in animation */
   .animate-fadeIn {
     animation: fadeIn 0.8s ease forwards;
   }
@@ -70,6 +71,7 @@
     }
   }
   
+  /* Bounce animation */
   .animate-bounce {
     animation: bounce 2s infinite;
   }
@@ -147,24 +149,11 @@
     background-color: #f8f8f8;
   }
 
-  /* ---- Hero helpers (background + responsive height) ---- */
-  .bg-hero-pillars {
-    background-image: url("/masonic-pillars.png?v=6");
+  /* ✅ Textured background for hero sections */
+  .bg-textured {
+    background-image: url('/textures/parchment-light.jpg');
     background-size: cover;
-    background-position: center bottom;
+    background-position: center;
     background-repeat: no-repeat;
-  }
-
-  .hero-h {
-    min-height: 70vh; /* default */
-  }
-  @media (min-width: 768px) {   /* md */
-    .hero-h { min-height: 75vh; }
-  }
-  @media (min-width: 1280px) {  /* xl */
-    .hero-h { min-height: 70vh; } /* increased from 62vh */
-  }
-  @media (min-width: 1536px) {  /* 2xl */
-    .hero-h { min-height: 60vh; } /* increased from 56vh */
   }
 }
