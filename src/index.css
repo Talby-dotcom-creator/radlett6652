@@ -156,15 +156,15 @@
   }
 
   .hero-h {
-    height: 70vh; /* default */
+    min-height: 70vh; /* default */
   }
   @media (min-width: 768px) {   /* md */
-    .hero-h { height: 75vh; }
+    .hero-h { min-height: 75vh; }
   }
   @media (min-width: 1280px) {  /* xl */
-    .hero-h { height: 62vh; }
+    .hero-h { min-height: 70vh; } /* increased from 62vh */
   }
   @media (min-width: 1536px) {  /* 2xl */
-    .hero-h { height: 56vh; }
+    .hero-h { min-height: 60vh; } /* increased from 56vh */
   }
 }
