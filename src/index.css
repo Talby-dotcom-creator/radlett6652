@@ -151,7 +151,7 @@
 
   /* ✅ Textured background for hero sections */
   .bg-textured {
-    background-image: url('/textures/parchment-light.jpg');
+    background-image: url('/textures/stone-dark.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

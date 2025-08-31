@@ -56,8 +56,8 @@ const SnippetsPage: React.FC = () => {
         keywords="Freemasonry, Radlett Lodge, Weekly Thoughts, Masonic reflections, Hertfordshire Freemasons"
       />
 
-      <section className="bg-stone-dark py-16 relative">
-        <div className="absolute inset-0 bg-white bg-opacity-80"></div>
+      <section className="bg-stone-dark relative">
+        <div className="absolute inset-0 bg-white bg-opacity-50"></div>
         <div className="container mx-auto px-4 max-w-3xl text-center relative z-10">
           <img
             src="/lodge-logo.png"
